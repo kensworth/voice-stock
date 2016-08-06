@@ -1,6 +1,1 @@
-GetQuote define {Word}
-GetQuote what is {Word}
-GetQuote {Word}
-GetQuote what does {Word} mean
-GetQuote tell me about {Word}
-GetQuote I'm curious about {Word}
+GetQuote how's {Stock}

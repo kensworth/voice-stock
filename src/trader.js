@@ -29,7 +29,7 @@ const getContent = function(url) {
 };
 
 function GetQuoteFromResponse(response) {
-    return JSON.parse(response).results[0].ask_price;
+    return Math.floor(JSON.parse(response).results[0].ask_price * 100);
 }
 
 var DEFINE_ENDPOINT = 'https://api.robinhood.com/quotes/?symbols=';
@@ -150,8 +150,8 @@ function getWelcomeResponse(callback) {
 
 function handleDefinitionRequest(intent, session, callback) {
     var sessionAttributes = {};
-    var word = intent.slots.Word.value.toUpperCase();
-    getContent(DEFINE_ENDPOINT + encodeURIComponent(word))
+    var stock = intent.slots.Stock.value.toUpperCase();
+    getContent(DEFINE_ENDPOINT + encodeURIComponent(stock))
           .then((response) => GetQuoteFromResponse(response))
           .catch((err) => console.error(err))
           .then((definition) => definitionResponse(definition))
