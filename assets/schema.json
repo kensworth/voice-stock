@@ -1,0 +1,13 @@
+{
+  "intents": [
+    {
+      "intent": "GetQuote",
+      "slots": [
+        {
+          "name": "Word",
+          "type": "LIST_OF_QUOTES"
+        }
+      ]
+    }
+  ]
+}
