@@ -29,7 +29,7 @@ const getContent = function(url) {
 };
 
 function GetQuoteFromResponse(response) {
-    return Math.floor(JSON.parse(response).results[0].ask_price * 100);
+    return Math.floor(JSON.parse(response).results[0].ask_price * 100) / 100;
 }
 
 var DEFINE_ENDPOINT = 'https://api.robinhood.com/quotes/?symbols=';
